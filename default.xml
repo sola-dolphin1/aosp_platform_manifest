@@ -5,14 +5,19 @@
            fetch="https://android.googlesource.com/" />
   <remote  name="jaosp"
            fetch="https://github.com/" />
+  <remote  name="wear"
+           fetch="https://github.com/" />
   <default revision="refs/tags/android-4.4.2_r2"
            remote="aosp"
            sync-j="4" />
 
-<!-- JAOSP -->
-  <project path="build" name="JAOSP/aosp_platform_build" remote="jaosp" revision="aosp-kitkat">
+<!-- Android Wear -->
+  <project path="build" name="sola-dolphin1/aosp_platform_build" remote="wear" revision="android-wear">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
+  <project path="device/jcrom/wear" name="sola-dolphin1/device_jcrom_wear" remote="wear" revision="android-wear" />
+
+<!-- JAOSP -->
   <project path="frameworks/base" name="JAOSP/aosp_platform_frameworks_base" remote="jaosp" revision="aosp-kitkat" />
   <project path="frameworks/native" name="JAOSP/aosp_platform_frameworks_native" remote="jaosp" revision="aosp-kitkat" />
   <project path="external/chromium_org" name="JAOSP/aosp_platform_external_chromium_org" remote="jaosp" revision="aosp-kitkat" />
